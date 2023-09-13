@@ -1,12 +1,23 @@
-<h3>Originais NetFlix</h3>
+<h3>Novidades</h3>
 <div class="container">
-  <div class="card"><img src="assets/AliceInBorderland.webp" /></div>
-  <div class="card"><img src="assets/BetterCallSaul.webp" /></div>
-  <div class="card"><img src="assets/ELCamino.webp" /></div>
-  <div class="card"><img src="assets/LaCasaDePapel.webp" /></div>
-  <div class="card"><img src="assets/OLegadoDeJupiter.webp" /></div>
-  <div class="card"><img src="assets/onepiece.webp" /></div>
+  <div class="card" *ngFor="let id of idsComNomeEImagem" [id]="id.id" (click)="abrirModal(id)">
+    <img [src]="id.foto" alt="{{ id.nome }} Foto" />
+  </div>
 </div>
+
+<!-- Janela modal -->
+<div class="modal" *ngIf="modalAberta">
+  <div class="modal-content">
+    <span class="close" (click)="fecharModal()">VOLTAR</span>
+    <div class="modal-details">
+      <img [src]="idSelecionada.foto" alt="{{ idSelecionada.nome }} Foto" />
+      <h2>{{ idSelecionada.nome }}</h2>
+      <p>{{ idSelecionada.descricao }}</p> <!-- Adicione a descrição aqui -->
+      <!-- Outras informações da ID aqui -->
+    </div>
+  </div>
+</div>
+
 <br>
 <br>
 <div>

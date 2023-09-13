@@ -30,7 +30,7 @@
       </a>
       <a href="#">
         <li>
-          <h3 style="font-size: 12px; margin: 0px;">Sair da Netflix</h3>
+          <h3 style="font-size: 12px; margin: 0px;">Sair do LUISFLIXBLOG</h3>
         </li>
       </a>
     </ul>
@@ -42,8 +42,8 @@
 
     <h4 style="color: red; text-align: center; margin: 0px 0px 0px 0px; font-size: 28px; font-weight: bold;">LUISFLIXBLOG</h4>
 
-    <a href="index.html">&nbsp;Linkedin&nbsp;</a>
-    <a href="#">&nbsp;Github&nbsp;</a>
+    <a href="https://www.linkedin.com/in/luisgomesp/">&nbsp;Linkedin&nbsp;</a>
+    <a href="https://github.com/Lipez800">&nbsp;Github&nbsp;</a>
     <a href="#">&nbsp;Youtube&nbsp;</a>
 
   </div>
@@ -62,17 +62,27 @@
        font-weight: bold;
        font-family: Courier New, monospace">PIECE</h1>
 
-    <p class="descricao">A pequena cidade de Hawkins é cenário de estranhos acontecimentos. Após o desaparecimento de um garoto, surge uma menina com poderes sobrenaturais. Assista agora a nova temporada de Stranger Things que está imperdível.</p>
+    <p class="descricao">O pirata Monkey D. Luffy e sua tripulação exploram um mundo fantástico de oceanos infinitos e ilhas exóticas em busca do maior tesouro do mundo
+    </p>
     <div>
       <div class="botoes">
-        <button role="button" class="botao">
-          <i class="fas fa-play"></i>
-          ASSISTIR AGORA
-        </button>
-        <button role="button" class="botao">
+        <button role="button" class="botao" id="onepiece" (click)="abrirModal('onepiece')">
           <i class="fas fa-info-circle"></i>
           MAIS INFORMAÇÕES
         </button>
+      </div>
+
+    </div>
+    <!-- Janela modal -->
+    <div class="modal" *ngIf="modalAberta">
+      <div class="modal-content">
+        <span class="close" (click)="fecharModal()">VOLTAR</span>
+        <div class="modal-details">
+          <img src="assets/onepiece.webp" alt="{{ idSelecionada.nome }} Foto" />
+          <h2>One Piece</h2>
+          <p>Aventuras emocionantes de Monkey D. Luffy e sua tripulação enquanto buscam o tesouro supremo, o One Piece.</p> <!-- Adicione a descrição aqui -->
+          <!-- Outras informações da ID aqui -->
+        </div>
       </div>
     </div>
     <br>
